@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mis Gastos</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>💸 Mis <span>Gastos</span></h1>
+  <button id="theme" title="Cambiar tema">🌓 Tema</button>
+</header>
+
+<section class="stats">
+  <div class="card stat"><small>Ingresos</small><b class="g" id="sIn">$0</b></div>
+  <div class="card stat"><small>Gastos</small><b class="r" id="sOut">$0</b></div>
+  <div class="card stat"><small>Balance</small><b id="sBal">$0</b></div>
+</section>
+
+<div class="grid">
+  <div class="side">
+    <div class="card">
+      <h2 id="fTitle">Nuevo movimiento</h2>
+      <div class="seg" id="seg"><button data-t="gasto" class="on">Gasto</button><button data-t="ingreso">Ingreso</button></div>
+      <label for="desc">Descripción</label><input id="desc" maxlength="60" placeholder="Ej: Almuerzo">
+      <label for="amt">Monto (COP)</label><input id="amt" type="number" min="0" step="100" inputmode="decimal" placeholder="0">
+      <label for="cat">Categoría</label><select id="cat"></select>
+      <label for="date">Fecha</label><input id="date" type="date">
+      <button class="btn" id="save">Agregar</button>
+      <button class="btn s" id="cancel" hidden>Cancelar edición</button>
+    </div>
+    <div class="card"><h2>Gastos por categoría</h2><div id="cats"></div></div>
+  </div>
+
+  <div class="card">
+    <h2>Movimientos</h2>
+    <div class="tools">
+      <input id="q" placeholder="🔍 Buscar…">
+      <select id="fMonth"></select>
+      <select id="fCat"></select>
+    </div>
+    <div id="list"></div>
+    <button class="btn s" id="clear">Borrar todos los datos</button>
+  </div>
+</div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
